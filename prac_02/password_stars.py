@@ -1,5 +1,5 @@
 """
-CP1404 | Practical 01 - menus | Liam Eime
+CP1404 | Practical 02 - password_stars | Liam Eime
 Program to get password with error checking
 """
 

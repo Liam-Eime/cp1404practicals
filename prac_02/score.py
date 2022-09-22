@@ -1,5 +1,5 @@
 """
-CP1404 | Practical 02 - broken_score | Liam Eime
+CP1404 | Practical 02 - score | Liam Eime
 Program to rate inputted score
 """
 import random

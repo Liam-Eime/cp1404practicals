@@ -1,5 +1,5 @@
 """
-CP1404 | Practical 02 - temperature | Liam Eime
+CP1404 | Practical 02 - temperatures | Liam Eime
 Program to convert between Celsius and Fahrenheit
 """
 
