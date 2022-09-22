@@ -5,6 +5,7 @@ Program to get and print a valid score with stars
 
 
 def main():
+    """Main function"""
     score = int(input("Enter Score: "))
     while score > 100 or score < 0:
         print("Invalid score, must be from 0-100")
