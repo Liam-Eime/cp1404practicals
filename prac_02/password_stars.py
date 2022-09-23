@@ -5,7 +5,7 @@ Program to get password with error checking
 
 
 def main():
-    """Main function"""
+    """Get password, checks length and prints stars"""
     minimum_password_length = 5
     password = get_password(minimum_password_length)
     print_asterisks(password)
@@ -21,7 +21,7 @@ def get_password(minimum_password_length):
 
 
 def print_asterisks(password):
-    """Print a number of asterisks equal to the length of the password"""
+    """Print number of asterisks equal to the length of the password"""
     print('*' * len(password))
 
 

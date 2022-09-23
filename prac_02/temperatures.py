@@ -5,7 +5,7 @@ Program to convert between Celsius and Fahrenheit
 
 
 def main():
-    """Main function"""
+    """Convert temperature between Celsius and Fahrenheit"""
     menu = """C - Convert Celsius to Fahrenheit
     F - Convert Fahrenheit to Celsius
     Q - Quit"""

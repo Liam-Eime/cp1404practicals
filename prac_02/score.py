@@ -1,12 +1,12 @@
 """
 CP1404 | Practical 02 - score | Liam Eime
-Program to rate inputted score
+Program to rate inputted and random scores
 """
 import random
 
 
 def main():
-    """Main function"""
+    """Rate both inputted and random score"""
     score = float(input("Enter score: "))
     print(rate_score(score))
 
@@ -16,7 +16,7 @@ def main():
 
 
 def rate_score(score):
-    """Rate the inputted score to return its rank"""
+    """Rate inputted score to return its rank"""
     if score > 100 or score < 0:
         return "Invalid score"
     elif score >= 90:
