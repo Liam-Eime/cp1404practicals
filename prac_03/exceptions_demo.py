@@ -6,16 +6,21 @@ Answer the following questions:
 3. Could you change the code to avoid the possibility of a ZeroDivisionError?
 """
 
-numerator = int(input("Enter the numerator: "))
-denominator = int(input("Enter the denominator: "))
-while denominator != 0:
+valid_input = False
+while not valid_input:
     try:
-        fraction = numerator / denominator
-        print(fraction)
+        numerator = int(input("Enter the numerator: "))
+        denominator = int(input("Enter the denominator: "))
+        if denominator == 0:
+            valid_input = True
+            print("Cannot divide by zero!")
+        else:
+            fraction = numerator / denominator
+            print(fraction)
     except ValueError:
         print("Numerator and denominator must be valid numbers!")
     print("Finished.")
-print("Cannot divide by zero!")
+    valid_input = True
 
 # ValueError will occur when either numerator and/or denominator are not numbers
 # ZeroDivisionError will occur when the denominator is zero and numerator is a valid number
