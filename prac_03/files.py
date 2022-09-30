@@ -16,3 +16,10 @@ with open("numbers.txt", "r") as numbers_text:
     first_number = int(numbers_text.readline())
     second_number = int(numbers_text.readline())
     print(f"Total of first two numbers if {first_number + second_number}")
+
+with open("numbers.txt", "r") as numbers_text:
+    total = 0
+    for line in numbers_text:
+        number_in_line = int(line)
+        total = total + number_in_line
+    print(total)
