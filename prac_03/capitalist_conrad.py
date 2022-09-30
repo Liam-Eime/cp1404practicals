@@ -1,6 +1,6 @@
 """
 CP1404 | Practical 03 - capitalist_conrad  | Liam Eime
-Program to ...
+Program to simulate stock-price for a volatile stock and print to file
 """
 
 import random
@@ -10,9 +10,12 @@ MAX_DECREASE = 0.05  # 5%
 MIN_PRICE = 1.0
 MAX_PRICE = 100.0
 INITIAL_PRICE = 10.0
+OUTPUT_FILE = "capitalist_conrad.txt"
+
+out_file = open(OUTPUT_FILE, 'w')
 
 price = INITIAL_PRICE
-print(f"Starting price: ${price:,.2f}")
+print(f"Starting price: ${price:,.2f}", file=out_file)
 number_of_days = 0  # initialising variable
 
 while price >= MIN_PRICE and price <= MAX_PRICE:
@@ -29,4 +32,6 @@ while price >= MIN_PRICE and price <= MAX_PRICE:
         price_change = random.uniform(-MAX_DECREASE, 0)
     number_of_days = number_of_days + 1
     price *= (1 + price_change)
-    print(f"On day {number_of_days} price is: ${price:,.2f}")
+    print(f"On day {number_of_days} price is: ${price:,.2f}", file=out_file)
+
+out_file.close()
