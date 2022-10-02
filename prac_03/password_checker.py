@@ -38,19 +38,19 @@ def is_valid_password(password):
     count_special = 0
     for char in password:
         if char.islower():
-            count_lower = count_lower + 1
+            count_lower += 1
         pass
 
         if char.isupper():
-            count_upper = count_upper + 1
+            count_upper += 1
         pass
 
         if char.isdigit():
-            count_digit = count_digit + 1
+            count_digit += 1
         pass
 
         if char in SPECIAL_CHARACTERS:
-            count_special = count_special + 1
+            count_special += 1
         pass
 
     if count_lower == 0:
@@ -59,11 +59,10 @@ def is_valid_password(password):
         return False
     elif count_digit == 0:
         return False
+    elif count_special == 0:
+        return False
     else:
         pass
-
-    if count_special == 0:
-        return False
 
     # if we get here (without returning False), then the password must be valid
     return True

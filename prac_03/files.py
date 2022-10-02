@@ -22,4 +22,4 @@ with open("numbers.txt", "r") as numbers_text:
     for line in numbers_text:
         number_in_line = int(line)
         total = total + number_in_line
-    print(total)
+    print(f"The total of all numbers is {total}")
