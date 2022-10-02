@@ -1,6 +1,6 @@
 """
 CP1404 | Practical 03 - password_checker | Liam Eime
-Program to ...
+Program to get and check password for required character types
 """
 
 MIN_LENGTH = 4
