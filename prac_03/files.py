@@ -15,7 +15,7 @@ with open(FILE_NAME, "r") as name_text:
 with open("numbers.txt", "r") as numbers_text:
     first_number = int(numbers_text.readline())
     second_number = int(numbers_text.readline())
-    print(f"Total of first two numbers if {first_number + second_number}")
+    print(f"Total of first two numbers is {first_number + second_number}")
 
 with open("numbers.txt", "r") as numbers_text:
     total = 0
