@@ -1,6 +1,6 @@
 """
-CP1404/CP5632 Practical
-List comprehensions
+CP1404 | Practical 04 - list_comprehensions  | Liam Eime
+Program to ...
 """
 
 names = ["Bob", "Angel", "Jimi", "Alan", "Ada"]
@@ -18,7 +18,7 @@ print(first_initials)
 
 # list comprehension that creates a list containing the initials
 # this splits each name and adds the first letters of each part to a string
-full_initials = [name.split()[0][0] + name.split()[1][0] for name in full_names]
+full_initials = [full_name.split()[0][0] + full_name.split()[1][0] for full_name in full_names]
 print(full_initials)
 
 # this example uses filtering to select only the names that start with A
@@ -29,16 +29,15 @@ print(a_names)
 # 'Ada Alan Angel Bob Jimi'
 print(" ".join(sorted(names)))
 
-# TODO: list comprehension to create a list of all the full_names in lowercase format
-# lowercase_full_names =
+lowercase_full_names = [full_name.lower() for full_name in full_names]
+print(lowercase_full_names)
 
 almost_numbers = ['0', '10', '21', '3', '-7', '88', '9']
-# TODO: list comprehension to create a list of integers from the above list of strings
-# numbers =
+numbers = [int(number) for number in almost_numbers]
+print(numbers)
 
-# TODO: list comprehension to create a list of only the numbers that are
-# greater than 9 from the numbers (not strings) you just created
+numbers_greater_than_9 = [number for number in numbers if number > 9]
+print(numbers_greater_than_9)
 
-# TODO: (more advanced) use a list comprehension and the join string method
-# to create a string (not list) of the last names for those full names longer than 11 characters
-# the result should be: 'Harlem, Hendrix, Lovelace'
+long_last_names = ', '.join([full_name.split()[1] for full_name in full_names if len(full_name) > 11])
+print(long_last_names)
