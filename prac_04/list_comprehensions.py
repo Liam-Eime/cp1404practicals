@@ -1,6 +1,6 @@
 """
 CP1404 | Practical 04 - list_comprehensions  | Liam Eime
-Program to ...
+Program to use list comprehensions in various fashions
 """
 
 names = ["Bob", "Angel", "Jimi", "Alan", "Ada"]
