@@ -7,6 +7,7 @@ FILENAME = "subject_data.txt"
 
 
 def main():
+    """get data as a list of lists and display the subject details"""
     data = get_data()
     print(data)
     display_subject_details(data)
