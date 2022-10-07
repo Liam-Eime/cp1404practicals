@@ -9,6 +9,7 @@ FILENAME = "subject_data.txt"
 def main():
     data = get_data()
     print(data)
+    display_subject_details(data)
 
 
 def get_data():
@@ -22,6 +23,12 @@ def get_data():
         data_lists.append(parts)
     input_file.close()
     return data_lists
+
+
+def display_subject_details(data):
+    """Display the subject details in an easy-to-read manner"""
+    for part in data:
+        print(f"{part[0]} is taught by {part[1]} and has {part[2]} students")
 
 
 main()
