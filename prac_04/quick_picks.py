@@ -1,6 +1,6 @@
 """
 CP1404 | Practical 04 - quick_picks | Liam Eime
-Program to ...
+Program to generate a number of lottery tickets (quick picks)
 """
 import random
 
