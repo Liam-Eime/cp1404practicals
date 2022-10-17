@@ -1,5 +1,5 @@
 """
-CP1404 | Practical 04 - list_comprehensions  | Liam Eime
+CP1404 | Practical 05 - hex_colours  | Liam Eime
 Program to look up hexadecimal colour codes
 """
 

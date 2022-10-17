@@ -1,5 +1,5 @@
 """
-CP1404 | Practical 04 - list_comprehensions  | Liam Eime
+CP1404 | Practical 05 - state_names  | Liam Eime
 Program for state names in a dictionary
 """
 
