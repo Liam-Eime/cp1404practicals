@@ -20,7 +20,12 @@ def main():
     for record in wimbledon_records:
         countries.add(record[1])
         champion_to_count[record[2]] = champion_to_count.get(record[2], 0) + 1
-    print(champion_to_count)
+
+    print("Wimbledon Champions: ")
+    for champion in champion_to_count:
+        print(f"{champion} {champion_to_count[champion]}")
+    print(f"\nThese {len(countries)} have won Wimbledon: ")
+    print(", ".join(countries))
 
 
 main()
