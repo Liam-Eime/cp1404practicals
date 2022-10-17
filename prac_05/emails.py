@@ -2,7 +2,7 @@
 CP1404 | Practical 05 - emails  | Liam Eime
 Program to store users' emails and names in a dictionary
 Estimate: 45 minutes
-Actual:
+Actual: 59 minutes
 """
 
 
@@ -13,8 +13,14 @@ def main():
     while email != "":
         name = extract_name_from_email(email)
         email_to_name[email] = name
+        is_name_correct = input(f"is your name {email_to_name[email]} correct? (Y/N)")
+        if is_name_correct.upper() != 'Y' and is_name_correct.upper() != '':
+            name = input("Name: ")
+            email_to_name[email] = name
         email = input("Email: ")
-    print(email_to_name)
+
+    for email in email_to_name:
+        print(f"{email_to_name[email]} ({email})")
 
 
 def extract_name_from_email(email):
