@@ -9,10 +9,12 @@ Actual:
 def main():
     """Store users emails and names in a dictionary"""
     email = input("Email: ")
+    email_to_name = {}
     while email != "":
         name = extract_name_from_email(email)
-        print(name)
+        email_to_name[email] = name
         email = input("Email: ")
+    print(email_to_name)
 
 
 def extract_name_from_email(email):
