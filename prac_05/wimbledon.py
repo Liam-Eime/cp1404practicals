@@ -6,15 +6,18 @@ Actual:
 """
 
 FILENAME = "wimbledon.csv"
-wimbledon_champions = []
+wimbledon_records = []
 champion_to_count = {}
+countries = set()
 
 
 def main():
     with open(FILENAME, "r", encoding="utf-8-sig") as in_file:
         in_file.readline()  # read first line to remove header
         for line in in_file:
-            wimbledon_champions.append(line.split(","))
+            wimbledon_records.append(line.split(","))
+
+
 
 
 main()
