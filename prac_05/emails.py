@@ -10,16 +10,20 @@ def main():
     """Store users emails and names in a dictionary"""
     email = input("Email: ")
     while email != "":
-        email_list = email.split("@")
-        email_title = email_list[0].split(".")
-        try:
-            first_name = email_title[0].title()
-            last_name = email_title[1].title()
-            print(f"{first_name}, {last_name}")
-        except IndexError:
-            first_name = email_title[0].title()
-            print(f"{first_name}")
+        extract_name_from_email(email)
         email = input("Email: ")
+
+
+def extract_name_from_email(email):
+    email_list = email.split("@")
+    email_title = email_list[0].split(".")
+    try:
+        first_name = email_title[0].title()
+        last_name = email_title[1].title()
+        print(f"{first_name}, {last_name}")
+    except IndexError:
+        first_name = email_title[0].title()
+        print(f"{first_name}")
 
 
 main()
