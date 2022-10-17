@@ -7,6 +7,7 @@ Actual:
 
 FILENAME = "wimbledon.csv"
 wimbledon_champions = []
+champions = {}
 
 
 def main():
@@ -14,7 +15,11 @@ def main():
         in_file.readline()  # read first line to remove header
         for line in in_file:
             wimbledon_champions.append(line.split(","))
-        print(wimbledon_champions)
+
+    for data_list in wimbledon_champions:
+        # print(data_list)
+        champions[data_list[2]] = data_list[1]
+    print(champions)
 
 
 main()
