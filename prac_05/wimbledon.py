@@ -17,7 +17,9 @@ def main():
         for line in in_file:
             wimbledon_records.append(line.split(","))
 
-
+    for record in wimbledon_records:
+        countries.add(record[1])
+    print(countries)
 
 
 main()
