@@ -16,6 +16,7 @@ def main():
 
 
 def extract_name_from_email(email):
+    """Extract name from email and return name"""
     email_list = email.split("@")
     email_title = email_list[0].split(".")
     try:
