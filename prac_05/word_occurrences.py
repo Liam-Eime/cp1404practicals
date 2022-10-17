@@ -5,7 +5,7 @@ Estimate: 30 minutes
 Actual: 26.5 minutes
 """
 
-string = str(input("Enter a string of words: "))
+string = input("Enter a string of words: ")
 word_to_count = {}
 
 for word in string.split(" "):
