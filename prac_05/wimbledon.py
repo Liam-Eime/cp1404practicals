@@ -43,7 +43,7 @@ def display_wimbledon_records(champion_to_count, countries):
     for champion in champion_to_count:
         print(f"{champion} {champion_to_count[champion]}")
     print(f"\nThese {len(countries)} have won Wimbledon: ")
-    print(", ".join(countries))
+    print(", ".join(sorted(countries)))
 
 
 main()
