@@ -12,15 +12,15 @@ CHAMPION_INDEX = 2
 
 def main():
     """Process Wimbledon records and display champions and winning countries"""
-    wimbledon_records = get_wimbledon_records()
+    wimbledon_records = get_wimbledon_records(FILENAME)
     countries, champion_to_count = process_wimbledon_records(wimbledon_records)
     display_wimbledon_records(champion_to_count, countries)
 
 
-def get_wimbledon_records():
+def get_wimbledon_records(filename):
     """Get Wimbledon records from file and save as a list of lists"""
     wimbledon_records = []
-    with open(FILENAME, "r", encoding="utf-8-sig") as in_file:
+    with open(filename, "r", encoding="utf-8-sig") as in_file:
         in_file.readline()  # read first line to remove header
         for line in in_file:
             wimbledon_records.append(line.split(","))
