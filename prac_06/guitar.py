@@ -1,7 +1,7 @@
 """
 CP1404 | Practical 06 - guitar  | Liam Eime
 Estimate: 45 minutes
-Actual:
+Actual: 35 minutes
 """
 
 CURRENT_YEAR = 2022

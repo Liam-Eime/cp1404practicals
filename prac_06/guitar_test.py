@@ -1,6 +1,7 @@
 """
 CP1404 | Practical 06 - guitar  | Liam Eime
 Program to test guitar.py Guitar class
+(Timing for this file and the guitar.py file was for the completion of both these files)
 """
 
 from guitar import Guitar
