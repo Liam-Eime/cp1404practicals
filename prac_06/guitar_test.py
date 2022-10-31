@@ -4,7 +4,7 @@ Program to test guitar.py Guitar class
 (Timing for this file and the guitar.py file was for the completion of both these files)
 """
 
-from guitar import Guitar
+from prac_06.guitar import Guitar
 
 CURRENT_YEAR = 2022
 
