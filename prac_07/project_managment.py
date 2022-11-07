@@ -35,24 +35,13 @@ def main():
         elif choice == "F":
             filter_projects_by_date(projects)
         elif choice == "A":
-            print("A")
+            add_new_project(projects)
         elif choice == "U":
             print("U")
         else:
             print("Invalid menu choice")
         print(MENU)
         choice = input(">>> ").upper()
-
-
-def filter_projects_by_date(projects):
-    """Filter projects by date"""
-    date_string = input("Show projects that start after date (dd/mm/yyyy): ")
-    date = get_date_from_string(date_string)
-    projects.sort(key=attrgetter('start_date'))
-    for project in projects:
-        date_to_string(project)
-        if get_date_from_string(project.start_date) >= date:
-            print(project)
 
 
 def load_projects_from_file(filename):
@@ -94,6 +83,29 @@ def display_projects(projects):
         date_to_string(project)
         if project.is_complete():
             print(f"\t{project}")
+
+
+def filter_projects_by_date(projects):
+    """Filter projects by date"""
+    date_string = input("Show projects that start after date (dd/mm/yyyy): ")
+    date = get_date_from_string(date_string)
+    projects.sort(key=attrgetter('start_date'))
+    for project in projects:
+        date_to_string(project)
+        if get_date_from_string(project.start_date) >= date:
+            print(project)
+
+
+def add_new_project(projects):
+    """Add new project to projects"""
+    print("Let's add a new project")
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yy): ")
+    priority = int(input("Priority: "))
+    cost_estimate = float(input("Cost estimate: $"))
+    percent_complete = int(input("Percent complete: "))
+    new_project = Project(name, start_date, priority, cost_estimate, percent_complete)
+    projects.append(new_project)
 
 
 def get_date_from_string(date_string):
