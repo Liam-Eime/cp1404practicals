@@ -1,9 +1,8 @@
 """
 CP1404 | myguitars | Liam Eime
-
 """
 
-from prac_06.guitar import Guitar
+from prac_07.guitar import Guitar
 
 FILENAME = "guitars.csv"
 
@@ -16,6 +15,8 @@ with open(FILENAME, 'r') as in_file:
         cost = float(parts[2])
         guitar = Guitar(name, year, cost)
         guitars.append(guitar)
+
+guitars.sort()
 
 for guitar in guitars:
     print(guitar)
