@@ -37,7 +37,7 @@ def main():
         elif choice == "A":
             add_new_project(projects)
         elif choice == "U":
-            print("U")
+            update_project(projects)
         else:
             print("Invalid menu choice")
         print(MENU)
@@ -103,9 +103,28 @@ def add_new_project(projects):
     start_date = input("Start date (dd/mm/yy): ")
     priority = int(input("Priority: "))
     cost_estimate = float(input("Cost estimate: $"))
-    percent_complete = int(input("Percent complete: "))
-    new_project = Project(name, start_date, priority, cost_estimate, percent_complete)
+    completion_percentage = int(input("Percent complete: "))
+    new_project = Project(name, start_date, priority, cost_estimate, completion_percentage)
     projects.append(new_project)
+
+
+def update_project(projects):
+    """Update project"""
+    for i, project in enumerate(projects):
+        print(f"{i} {project}")
+    index = int(input("Project choice: "))
+    project_to_update = projects[index]
+    print(project_to_update)
+    try:
+        completion_percentage = int(input("New percentage: "))
+        project_to_update.completion_percentage = completion_percentage
+    except ValueError:
+        pass
+    try:
+        priority = int(input("New priority: "))
+        project_to_update.priority = priority
+    except ValueError:
+        pass
 
 
 def get_date_from_string(date_string):
