@@ -29,7 +29,8 @@ def main():
             filename = input("Enter filename: ")
             save_projects_to_file(filename, projects)
         elif choice == "D":
-            print("D")
+            projects.sort()
+            display_projects(projects)
         elif choice == "F":
             print("F")
         elif choice == "A":
@@ -66,6 +67,18 @@ def save_projects_to_file(filename, projects):
         for project in projects:
             print(f"{project.name}\t{project.start_date}\t{project.priority}\t"
                   f"{project.cost_estimate}\t{project.completion_percentage}", file=out_file)
+
+
+def display_projects(projects):
+    """Display projects grouped by completion"""
+    print("Incomplete projects")
+    for project in projects:
+        if not project.is_complete():
+            print(f"\t{project}")
+    print("Complete projects")
+    for project in projects:
+        if project.is_complete():
+            print(f"\t{project}")
 
 
 if __name__ == '__main__':
