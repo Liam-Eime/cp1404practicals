@@ -6,6 +6,7 @@ Actual time =
 
 import datetime
 from prac_07.project import Project
+from operator import attrgetter
 
 MENU = """- (L)oad projects
 - (S)ave projects
@@ -32,7 +33,7 @@ def main():
             projects.sort()
             display_projects(projects)
         elif choice == "F":
-            print("F")
+            filter_projects_by_date(projects)
         elif choice == "A":
             print("A")
         elif choice == "U":
@@ -43,6 +44,17 @@ def main():
         choice = input(">>> ").upper()
 
 
+def filter_projects_by_date(projects):
+    """Filter projects by date"""
+    date_string = input("Show projects that start after date (dd/mm/yyyy): ")
+    date = get_date_from_string(date_string)
+    projects.sort(key=attrgetter('start_date'))
+    for project in projects:
+        date_to_string(project)
+        if get_date_from_string(project.start_date) >= date:
+            print(project)
+
+
 def load_projects_from_file(filename):
     """Load projects from file "filename"."""
     projects = []
@@ -51,7 +63,7 @@ def load_projects_from_file(filename):
         for line in in_file:
             parts = line.strip().split("\t")
             name = parts[0]
-            start_date = parts[1]
+            start_date = get_date_from_string(parts[1])
             priority = int(parts[2])
             cost_estimate = float(parts[3])
             completion_percentage = int(parts[4])
@@ -65,6 +77,7 @@ def save_projects_to_file(filename, projects):
     with open(filename, 'w') as out_file:
         print(f"Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=out_file)
         for project in projects:
+            date_to_string(project)
             print(f"{project.name}\t{project.start_date}\t{project.priority}\t"
                   f"{project.cost_estimate}\t{project.completion_percentage}", file=out_file)
 
@@ -73,12 +86,25 @@ def display_projects(projects):
     """Display projects grouped by completion"""
     print("Incomplete projects")
     for project in projects:
+        date_to_string(project)
         if not project.is_complete():
             print(f"\t{project}")
     print("Complete projects")
     for project in projects:
+        date_to_string(project)
         if project.is_complete():
             print(f"\t{project}")
+
+
+def get_date_from_string(date_string):
+    """Get date from string"""
+    return datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+
+
+def date_to_string(project):
+    """Make date string if not string"""
+    if not isinstance(project.start_date, str):
+        project.start_date = project.start_date.strftime("%d/%m/%Y")
 
 
 if __name__ == '__main__':
