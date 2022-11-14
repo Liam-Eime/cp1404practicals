@@ -1,3 +1,7 @@
+"""
+CP1404 | Liam Eime | box layout modifications
+"""
+
 from kivy.app import App
 from kivy.lang import Builder
 
