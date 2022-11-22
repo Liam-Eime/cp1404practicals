@@ -22,6 +22,11 @@ def main():
             display_taxis(taxis)
         elif choice == "d":
             print("d")
+        else:
+            print("Invalid option")
+        print(f"Bill to date: ${total_trip_cost:.2f}")
+        print(MENU)
+        choice = input(">>> ").lower()
 
 
 def display_taxis(taxis):
